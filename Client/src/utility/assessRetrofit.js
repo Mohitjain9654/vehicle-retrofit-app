@@ -84,45 +84,97 @@ export function assessRetrofit(inputs) {
     recommendations.push("Vehicle age is high; retrofitting might be less efficient.");
   }
 
-  if (electricalIssues === "major") {
+  if (electricalIssues === "3" || electricalIssues === "4") {
     recommendations.push("Major electrical issues detected; retrofitting may require significant work.");
   }
 
-  if (vehicleBodyCondition === "bad") {
+  if (vehicleBodyCondition === "4") {
     recommendations.push("The vehicle's body condition is poor; consider repairing it before retrofitting.");
   }
 
   // Additional Recommendations
-  if (brakingSystemCondition >= 6) {
+  if (brakingSystemCondition >= 2) {
     recommendations.push("Braking system is significantly worn; replace or repair before retrofitting.");
   }
 
-  if (tireCondition >= 6) {
+  if (tireCondition >= 2) {
     recommendations.push("Tyres are worn out or aged; replacing them is essential for safety.");
   }
 
-  if (structuralIntegrity >= 6) {
+  if (structuralIntegrity >= 2) {
     recommendations.push("Structural integrity is compromised; inspect frame and chassis thoroughly.");
   }
 
-  if (suspensionLoadCondition >= 6) {
+  if (suspensionLoadCondition >= 2) {
     recommendations.push("Suspension components are degraded; replacement recommended.");
   }
 
-  if (transmissionCondition >= 6) {
+  if (transmissionCondition >= 2) {
     recommendations.push("Transmission system shows significant wear; may impact performance post-retrofit.");
   }
 
-  if (clusterDisplayCondition >= 6) {
+  if (clusterDisplayCondition >= 2) {
     recommendations.push("Dashboard cluster components are not fully functional; consider repairing the speedometer, fuel gauge, or odometer.");
   }
 
-  if (mudguardCondition >= 6) {
+  if (mudguardCondition >= 2) {
     recommendations.push("Mudguards are in poor condition; replacing them will improve protection and appearance.");
   }
 
   if (totalScore < 50) {
     recommendations.push("Vehicle in poor condition; retrofitting may not be viable.");
+  }
+
+  if (brakingSystemCondition >= 4) {
+    recommendations.push("Braking efficiency is below safe limits; immediate repairs are required.");
+  }
+
+  if (tireCondition >= 4) {
+    recommendations.push("Tyres have poor tread or damage; replacement is critical for road safety.");
+  }
+
+  if (wheelCondition >= 4) {
+    recommendations.push("Wheels are damaged or misaligned; check for cracks or deformities.");
+  }
+
+  if (structuralIntegrity >= 4) {
+    recommendations.push("Frame has signs of damage or corrosion; may compromise vehicle safety.");
+  }
+
+  if (vehicleBodyCondition >= 4) {
+    recommendations.push("Vehicle body is degraded; repairing dents, rust, and paint will improve safety and appearance.");
+  }
+
+  if (electricalIssues >= 4 || electricalIssues === "4") {
+    recommendations.push("Electrical system faults detected; check wiring, lighting, and battery connections.");
+  }
+
+  if (mudguardCondition >= 4) {
+    recommendations.push("Damaged or missing mudguards; replacing them will prevent splashes and debris damage.");
+  }
+
+  if (outsideFrameCondition >= 4) {
+    recommendations.push("Outer frame shows signs of wear or damage; repainting or restoration recommended.");
+  }
+
+  if (suspensionLoadCondition >= 4) {
+    recommendations.push("Suspension system is underperforming; check shock absorbers and springs.");
+  }
+
+  if (clusterDisplayCondition >= 4) {
+    recommendations.push("Dashboard display issues; speedometer, fuel gauge, or odometer may be inaccurate.");
+  }
+
+  if (lowerBodyCondition >= 4) {
+    recommendations.push("Undercarriage condition is poor; inspect for rust, leaks, and mechanical wear.");
+  }
+
+  if (transmissionCondition >= 4) {
+    recommendations.push("Transmission is showing signs of slipping or delayed shifting; servicing is needed.");
+  }
+
+  if (normalizedScore < 70 && recommendations.length === 0) {
+    recommendations.push("Multiple systems show signs of wear or damage; a detailed inspection is recommended before retrofitting.");
   }
 
 
