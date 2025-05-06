@@ -21,18 +21,18 @@ export function assessRetrofit(inputs) {
 
   const scores = {
     vehicleAge: [30, 28, 25, 22, 20, 18, 17, 16, 15],
-    brakes: [10, 8, 6, 4, 2, 1, 0, 0, 0],
-    tyre: [10, 8, 6, 4, 2, 1, 0, 0, 0],
-    wheel: [10, 9, 8, 7, 6, 5, 5, 4, 3],
-    StructuralIntegrity: [20, 19, 18, 16, 14, 12, 10, 8, 6],
-    bodyFrame: [30, 28, 26, 24, 22, 20, 18, 16, 14],
-    lowerBodyCondition: [20, 18, 16, 14, 12, 10, 9, 8, 6],
-    electricFitting: [15, 14, 12, 10, 8, 6, 5, 4, 2],
-    outsideFrame: [15, 14, 13, 12, 10, 9, 8, 7, 5],
-    suspensionLoad: [15, 14, 12, 10, 8, 7, 6, 5, 3],
-    clusterDisplay: [10, 9, 8, 7, 6, 5, 4, 3, 2],
-    mudguard: [10, 9, 8, 7, 6, 5, 4, 3, 2],
-    transmission: [20, 18, 16, 14, 12, 10, 8, 6, 4]
+    brakes: [10, 8, 6, 0, 0], // Adjust to scale from 1-5
+    tyre: [10, 8, 6, 1, 0], // Adjust to scale from 1-5
+    wheel: [10, 8, 6, 2, 1], // Adjust to scale from 1-5
+    StructuralIntegrity: [20, 16, 13, 10, 0], // Adjust to scale from 1-5
+    bodyFrame: [30, 25, 20, 15, 10], // Adjust to scale from 1-5
+    lowerBodyCondition: [20, 16, 12, 7, 0], // Adjust to scale from 1-5
+    electricFitting: [15, 13, 10, 5, 0], // Adjust to scale from 1-5
+    outsideFrame: [15, 12, 10, 7, 3], // Adjust to scale from 1-5
+    suspensionLoad: [15, 12, 10, 7, 3], // Adjust to scale from 1-5
+    clusterDisplay: [15, 12, 9, 5, 0], // Adjust to scale from 1-5
+    mudguard: [15, 12, 9, 0, 0], // Adjust to scale from 1-5
+    transmission: [15, 12, 10, 7, 3] // Adjust to scale from 1-5
   };
 
   totalScore += scores.vehicleAge[vehicleAge] || 0;
@@ -43,14 +43,21 @@ export function assessRetrofit(inputs) {
   totalScore += scores.bodyFrame[vehicleBodyCondition] || 0;
 
   totalScore += scores.mudguard[
-    mudguardCondition === "good" ? 0 :
-    mudguardCondition === "average" ? 1 : 2
+    mudguardCondition === "0" ? 0 :   // 5 ⭐️ Excellent
+    mudguardCondition === "1" ? 1 :   // 4 ⭐️ Very Good
+    mudguardCondition === "2" ? 2 :   // 3 ⭐️ Good
+    mudguardCondition === "3" ? 3 :   // 2 ⭐️ Bad
+    mudguardCondition === "4" ? 4 :  // 1 ⭐️ Very Poor
+    0
   ] || 0;
 
   totalScore += scores.electricFitting[
-    electricalIssues === "none" ? 0 :
-    electricalIssues === "minor" ? 1 :
-    electricalIssues === "major" ? 2 : 3
+    electricalIssues === "0" ? 0 :   // 5 ⭐️ Excellent
+    electricalIssues === "1" ? 1 :   // 4 ⭐️ Very Good
+    electricalIssues === "2" ? 2 :   // 3 ⭐️ Good
+    electricalIssues === "3" ? 3 :   // 2 ⭐️ Bad
+    electricalIssues === "4" ? 4 :  // 1 ⭐️ Very Poor
+    0
   ] || 0;
 
   totalScore += scores.outsideFrame[outsideFrameCondition] || 0;
@@ -58,10 +65,12 @@ export function assessRetrofit(inputs) {
   totalScore += scores.clusterDisplay[clusterDisplayCondition] || 0;
 
   totalScore += scores.lowerBodyCondition[
-    lowerBodyCondition === "excellent" ? 0 :
-    lowerBodyCondition === "good" ? 1 :
-    lowerBodyCondition === "fair" ? 2 :
-    lowerBodyCondition === "poor" ? 3 : 4
+    lowerBodyCondition === "0" ? 0 :   // 5 ⭐️ Excellent
+    lowerBodyCondition === "1" ? 1 :   // 4 ⭐️ Very Good
+    lowerBodyCondition === "2" ? 2 :   // 3 ⭐️ Good
+    lowerBodyCondition === "3" ? 3 :   // 2 ⭐️ Average
+    lowerBodyCondition === "4" ? 4 :  // 1 ⭐️ Bad
+    0
   ] || 0;
 
   totalScore += scores.transmission[transmissionCondition] || 0;
@@ -69,8 +78,10 @@ export function assessRetrofit(inputs) {
   const normalizedScore = (totalScore / maxScore) * 100;
 
   // Add Recommendations
-  if (vehicleAge > 8) {
-    recommendations.push("Vehicle age is high; retrofitting may be more costly and less effective.");
+  if (vehicleAge > 10) {
+    recommendations.push("Vehicle age is over 10 years; retrofitting may be expensive and less effective.");
+  } else if (vehicleAge > 8) {
+    recommendations.push("Vehicle age is high; retrofitting might be less efficient.");
   }
 
   if (electricalIssues === "major") {
@@ -109,6 +120,11 @@ export function assessRetrofit(inputs) {
   if (mudguardCondition >= 6) {
     recommendations.push("Mudguards are in poor condition; replacing them will improve protection and appearance.");
   }
+
+  if (totalScore < 50) {
+    recommendations.push("Vehicle in poor condition; retrofitting may not be viable.");
+  }
+
 
   return {
     score: normalizedScore,
