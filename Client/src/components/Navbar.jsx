@@ -21,7 +21,7 @@ const Navbar = () => {
         <ul className="p-6 space-y-4">
           <li><Link to="/"><i className="fa fa-home mr-2"></i>Home</Link></li>
           <li><Link to="/retrofitting"><i className="fa fa-cogs mr-2"></i>Retrofitting Process</Link></li>
-          <li><Link to="/workshops"><i className="fa fa-map-marker-alt mr-2"></i>Nearby Workshop</Link></li>
+          <li><Link to="/WorkshopsPage"><i className="fa fa-map-marker-alt mr-2"></i>Nearby Workshop</Link></li>
           <li><Link to="/about"><i className="fa fa-info-circle mr-2"></i>About Us</Link></li>
         </ul>
       </div>
@@ -40,7 +40,7 @@ const Navbar = () => {
         <ul className="flex space-x-6 text-white text-lg">
           <li><Link to="/">Home</Link></li>
           <li><Link to="/retrofitting">Retrofitting Process</Link></li>
-          <li><Link to="/workshops">Nearby Workshop</Link></li>
+          <li><Link to="/WorkshopsPage">Nearby Workshop</Link></li>
           <li><Link to="/about">About Us</Link></li>
         </ul>
       </nav>
