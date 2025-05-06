@@ -9,16 +9,11 @@ const Result = () => {
     <div className="p-4 text-white relative bg-black">
       {/* Confetti effect shown when score is 70% or more */}
       {isEligible && <Confetti numberOfPieces={200} gravity={0.05} />}
-      
+
       <h2 className="text-2xl font-semibold mb-2 text-center">Retrofit Assessment Result</h2>
       <p className="mb-4 text-lg text-center">✅ Retrofit Score: <strong>{state.score.toFixed(1)}%</strong></p>
-      
-      {isEligible ? (
-        <div className="text-center">
-          {/* This message is shown with confetti */}
-          <p className="mb-4 text-2xl font-bold">🎉 No major issues detected. Vehicle is likely fit for retrofitting!</p>
-        </div>
-      ) : (
+
+      {!isEligible && (
         <>
           {state.recommendations.length > 0 ? (
             <>
@@ -35,7 +30,7 @@ const Result = () => {
               </div>
             </>
           ) : (
-            <p className="text-lg">⚠️ Issues detected. Please review the recommendations for improvement.</p>
+            <p className="text-lg">ℹ️ No specific recommendations, but the score is below the eligibility threshold. Consider reviewing vehicle components manually.</p>
           )}
         </>
       )}
