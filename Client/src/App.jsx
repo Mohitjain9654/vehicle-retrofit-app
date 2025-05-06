@@ -23,7 +23,7 @@ const App = () => {
               <Route path="/retrofitting" element={<RetrofittingProcess />} />
               <Route path="/ManualEntry" element={<ManualEntry />} />
               <Route path="/results" element={<Result />} />
-              <Route path="/workshops" element={<WorkshopsPage />} />
+              <Route path="/WorkshopsPage" element={<WorkshopsPage />} />
               <Route path="/about" element={<About />} /> {/* About page route */}
               {/* <Route path="/camera" element={<CameraInput />} /> */}
             </Routes>
