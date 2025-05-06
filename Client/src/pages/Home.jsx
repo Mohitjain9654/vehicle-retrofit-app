@@ -22,7 +22,7 @@ const Home = () => {
                     <div className="bg-neutral-800/90 rounded-lg p-6 inline-block">
                         <h2 className="text-xl text-pink-200 mb-4">Start Your Retrofitting Journey</h2>
                         <div className="space-x-4">
-                            <a href="/startPage">
+                            <a href="/StartPage">
                                 <button className="bg-indigo-500 hover:bg-indigo-600 text-white font-semibold py-2 px-4 rounded">
                                     Start
                                 </button>
