@@ -8,6 +8,8 @@ import Result from './pages/Result';
 import WorkshopsPage from './pages/WorkshopsPage';
 import RetrofittingProcess from './pages/retrofitting';  // Updated import
 import About from './pages/About';  // Corrected import for the About page
+import WantRetrofit from './pages/WantRetrofit';
+import RetrofitEstimate from './pages/RetrofitEstimate';
 
 const App = () => {
   return (
@@ -19,12 +21,14 @@ const App = () => {
           <div className="p-4">
             <Routes>
               <Route path="/" element={<Home />} />
-              <Route path="/startPage" element={<StartPage />} />
+              <Route path="/StartPage" element={<StartPage />} />
               <Route path="/retrofitting" element={<RetrofittingProcess />} />
               <Route path="/ManualEntry" element={<ManualEntry />} />
               <Route path="/results" element={<Result />} />
               <Route path="/WorkshopsPage" element={<WorkshopsPage />} />
               <Route path="/about" element={<About />} /> {/* About page route */}
+              <Route path="/want_retrofit" element={<WantRetrofit />} />
+              <Route path="/retrofit-estimate" element={<RetrofitEstimate />} />
               {/* <Route path="/camera" element={<CameraInput />} /> */}
             </Routes>
           </div>
@@ -35,3 +39,4 @@ const App = () => {
 };
 
 export default App;
+
