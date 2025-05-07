@@ -17,7 +17,7 @@ const Result = () => {
         <>
           {state.recommendations.length > 0 ? (
             <>
-              <p className="mb-2 font-medium text-lg bg-black">⚠️ Recommendations:</p>
+              <p className="mb-2 font-medium text-lg bg-black">⚠️ ⚠️ unsuitable for retrofitting because of the following reason:</p>
               <div className="space-y-4">
                 {state.recommendations.map((rec, i) => (
                   <div
