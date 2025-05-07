@@ -16,6 +16,7 @@
     "@tensorflow/tfjs-backend-webgl": "^4.22.0",
     "axios": "^1.8.4",
     "framer-motion": "^12.9.7",
+    "lucide-react": "^0.508.0",
     "object-hash": "^3.0.0",
     "react": "^19.0.0",
     "react-confetti": "^6.4.0",
