@@ -17,7 +17,7 @@ export function assessRetrofit(inputs) {
 
   const recommendations = [];
   let totalScore = 0;
-  const maxScore = 215;
+  const maxScore = 220;
 
   const scores = {
     vehicleAge: [30, 28, 25, 22, 20, 18, 17, 16, 15],
