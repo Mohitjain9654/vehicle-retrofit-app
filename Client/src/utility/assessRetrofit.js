@@ -175,4 +175,3 @@ if (normalizedScore < 70 && recommendations.length === 0) {
     recommendations
   };
 }
-
