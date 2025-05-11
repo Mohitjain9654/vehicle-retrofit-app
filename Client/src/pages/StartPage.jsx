@@ -1,6 +1,5 @@
 import { useState } from "react";
 import ManualEntry from "./ManualEntry";
-import CameraUpload from "./CameraUpload";
 
 const StartPage = () => {
   const [activeTab, setActiveTab] = useState("manual");
@@ -30,7 +29,17 @@ const StartPage = () => {
         </button>
       </div>
 
-      {activeTab === "manual" ? <ManualEntry /> : <CameraUpload />}
+      {activeTab === "manual" ? (
+        <ManualEntry />
+      ) : (
+        <div className="w-full h-[80vh]">
+          <iframe
+            src="https://retrofit-analyzer.vercel.app/" // Replace with actual deployed URL if needed
+            className="w-full h-full rounded border-none"
+            title="Embedded Camera App"
+          ></iframe>
+        </div>
+      )}
     </div>
   );
 };
