@@ -261,12 +261,10 @@ const NearbyWorkshops = () => {
                         center={[userLocation.lat, userLocation.lng]}
                         zoom={12}
                         className="h-full w-full z-0"
-                    >
+                    > 
                         <TileLayer
-                            attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-                            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                            url="https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png"
                         />
-
                         {selectedWorkshop && (
                             <FlyToMarker lat={selectedWorkshop.lat} lng={selectedWorkshop.lng} />
                         )}
