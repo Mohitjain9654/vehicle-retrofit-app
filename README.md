@@ -15,7 +15,7 @@ A full-stack web application that determines the eligibility of a vehicle for re
 
 ---
 
-## 🧠 Retrofitting Process Flow (Explained)
+## 🧠 Retrofitting Process Flow
 
 The app follows two data input paths: **Manual Entry** and **Camera-Based Assessment**. Here's how it works:
 
