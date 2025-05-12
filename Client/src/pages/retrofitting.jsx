@@ -87,7 +87,7 @@ const RetrofittingProcess = () => {
                 <div className="bg-gray-800 bg-opacity-70 p-8 rounded-lg shadow-md flex flex-col md:flex-row items-center md:space-x-8">
                     <div className="md:w-1/2 space-y-4">
                         <div className="flex items-center space-x-3 text-teal-400">
-                            <FaWrench size={32} className="animate-spin slow-spin" /> {/* Added spin animation to the wrench */}
+                            <FaWrench size={32} className="" /> {/* Added spin animation to the wrench */}
                             <h3 className="text-xl font-semibold">Step 3: Your Two Wheeler's Health Number is Calculated</h3>
                         </div>
                         <p className="text-lg text-gray-300">
@@ -102,7 +102,7 @@ const RetrofittingProcess = () => {
                 {/* Step 4: Our Advice for You */}
                 <div className="bg-gray-800 bg-opacity-70 p-8 rounded-lg shadow-md space-y-6 text-center animate-pulse-slow">
                     <div className="flex items-center justify-center space-x-4 text-yellow-400">
-                        <FaLightbulb size={36} className="animate-spin-slow" />
+                        <FaLightbulb size={36} className="" />
                         <h3 className="text-2xl font-semibold tracking-wide">Step 4: Here's What We Think</h3>
                     </div>
                     <p className="text-lg text-gray-300 mb-6">
@@ -131,15 +131,6 @@ const RetrofittingProcess = () => {
 
     .animate-pulse-slow {
       animation: pulse-slow 2s ease-in-out infinite;
-    }
-
-    @keyframes spin-slow {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
-    }
-
-    .animate-spin-slow {
-      animation: spin-slow 3s linear infinite;
     }
 
     @keyframes slide-in-bottom {
@@ -174,6 +165,100 @@ const RetrofittingProcess = () => {
   `}
                 </style>
             </div>
+
+            {/* Step 5: Estimate Retrofit Cost */}
+            <div className="bg-gray-800 bg-opacity-70 p-8 rounded-lg shadow-md flex flex-col md:flex-row items-center md:space-x-8">
+                <div className="md:w-1/2 flex justify-center items-center mb-4 md:mb-0 animate-pulse">
+                    <FaRocket size={60} className="text-indigo-400" />
+                </div>
+                <div className="md:w-1/2 space-y-4">
+                    <div className="flex items-center space-x-3 text-indigo-300">
+                        <h3 className="text-xl font-semibold">Step 5: Get an Approximate Cost</h3>
+                    </div>
+                    <p className="text-lg text-gray-300">
+                        Based on your vehicle's health score and upgrade eligibility, we’ll help you calculate the estimated cost for the retrofit. This gives you a rough idea of the investment involved.
+                    </p>
+                    <Link to="/want_retrofit" className="inline-block mt-2 px-4 py-2 bg-indigo-600 text-white rounded hover:bg-indigo-500 transition">
+                        Try Cost Calculator
+                    </Link>
+                </div>
+            </div>
+
+            {/* Step 6: Customize Your Retrofit Needs */}
+            <div className="bg-gray-800 bg-opacity-70 p-8 rounded-lg shadow-md flex flex-col md:flex-row items-center md:space-x-8">
+                <div className="md:w-1/2 space-y-4">
+                    <div className="flex items-center space-x-3 text-pink-400">
+                        <FaWrench size={32} className="animate-pulse" />
+                        <h3 className="text-xl font-semibold">Step 6: Help Us Customize Your Retrofit</h3>
+                    </div>
+                    <p className="text-lg text-gray-300">
+                        Let us know how much performance and capacity you expect. We'll use this to tailor your upgrade.
+                    </p>
+                    <ul className="list-disc list-inside text-sm text-gray-400">
+                        <li>Approximate vehicle weight</li>
+                        <li>Battery capacity (Ah/kWh)</li>
+                        <li>Motor capacity (kW)</li>
+                        <li>Top speed you expect (km/h)</li>
+                    </ul>
+                    <Link to="/want_retrofit" className="inline-block mt-2 px-4 py-2 bg-pink-600 text-white rounded hover:bg-pink-500 transition">
+                        Fill Customization Form
+                    </Link>
+                </div>
+                <div className="md:w-1/2 flex justify-center items-center mt-4 md:mt-0">
+                    <FaArrowRight size={60} className="text-pink-400 animate-bounce" />
+                </div>
+            </div>
+
+            {/* Step 7: How the System Calculates Your Retrofit Cost */}
+            <div className="bg-gray-800 bg-opacity-70 p-8 rounded-lg shadow-md flex flex-col md:flex-row items-center md:space-x-8">
+                <div className="md:w-1/2 flex justify-center items-center mb-4 md:mb-0 animate-pulse">
+                    <FaRocket size={60} className="text-indigo-400" />
+                </div>
+                <div className="md:w-1/2 space-y-4">
+                    <div className="flex items-center space-x-3 text-indigo-300">
+                        <h3 className="text-xl font-semibold">Step 7: How We Calculate Your Retrofit Cost</h3>
+                    </div>
+                    <p className="text-lg text-gray-300">
+                        Based on the details you've provided, our system will factor in several key components:
+                    </p>
+                    <ul className="list-disc list-inside text-sm text-gray-400">
+                        <li>Vehicle weight</li>
+                        <li>Battery capacity (Ah/kWh)</li>
+                        <li>Motor capacity (kW)</li>
+                        <li>Top speed requirement (km/h)</li>
+                    </ul>
+                    <p className="text-lg text-gray-300">
+                        After considering these factors, we’ll calculate the retrofit cost, giving you an estimated price for the upgrade.
+                    </p>
+                </div>
+            </div>
+
+            {/* Step 8: Display Estimated Retrofit Cost */}
+            <div className="bg-gray-800 bg-opacity-70 p-8 rounded-lg shadow-md flex flex-col md:flex-row items-center md:space-x-8">
+                <div className="md:w-1/2 flex justify-center items-center mb-4 md:mb-0 animate-pulse">
+                    <FaExclamationTriangle size={60} className="text-yellow-500" />
+                </div>
+                <div className="md:w-1/2 space-y-4">
+                    <div className="flex items-center space-x-3 text-yellow-300">
+                        <h3 className="text-xl font-semibold">Estimated Retrofit Cost</h3>
+                    </div>
+                    <p className="text-lg text-gray-300">
+                        Based on your selections, your estimated retrofit cost is:
+                    </p>
+                    {/* You can dynamically display the cost here */}
+                    <div className="text-4xl font-bold text-blue-400">
+                        $X,XXX.XX {/* Replace with dynamic calculation */}
+                    </div>
+                    <p className="text-lg text-gray-300 mt-4">
+                        This is an estimate, and the final cost may vary based on additional factors. You can adjust the details in the customization form for a more accurate price.
+                    </p>
+                    <Link to="/want_retrofit" className="inline-block mt-4 px-4 py-2 bg-yellow-600 text-white rounded hover:bg-yellow-500 transition">
+                        Proceed to Finalize Retrofit
+                    </Link>
+                </div>
+            </div>
+
+
 
             {/* Call to Action */}
             <div className="text-center mt-10">
