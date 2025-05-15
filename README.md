@@ -66,8 +66,8 @@ The app follows two data input paths: **Manual Entry** and **Camera-Based Assess
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/retrofitting-app.git
-cd retrofitting-app
+git clone https://github.com/Mohitjain9654/vehicle-retrofit-app.git
+cd vehicle-retrofit-app
 ```
 
 ### 2. Setup Backend
