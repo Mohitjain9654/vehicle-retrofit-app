@@ -104,6 +104,14 @@ The following diagram illustrates the complete workflow followed by the app for 
 
 ## 🙋‍♂️ Author
 
-**Mohit Jain**  
-Second-year B.Tech CSE student | Passionate Web Developer  
-GitHub: [@Mohitjain9654](https://github.com/Mohitjain9654)
+Built with ❤️ by Mohit Jain
+
+
+Feel free to connect or collaborate!
+
+- 🔗 [LinkedIn](https://www.linkedin.com/in/mohit-jain-dev/)  
+- 💻 [GitHub](https://github.com/Mohitjain9654)  
+- 🌐 [Portfolio Website](https://mohitjain-portfolio.vercel.app/)  
+- 📧 Email: mohitjain965405@gmail.com
+
+---
