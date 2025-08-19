@@ -33,8 +33,8 @@ const RetrofitEstimate = () => {
   const motorCost = motorCapacity * 7000; // ₹7,000 per kW
 
   const weightBasedCost = weightCategory * 10; // ₹10 per kg approx
-  const otherPartsCost = 7000;
-  const laborCost = 5000;
+  const otherPartsCost = 14000;
+  const laborCost = 10000;
 
   const totalCost = batteryCost + motorCost + otherPartsCost + laborCost + weightBasedCost;
 
